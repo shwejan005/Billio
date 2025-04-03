@@ -6,7 +6,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 function Header() {
   return (
-    <header className='flex justify-between items-center px-8 text-slate-700 border-b mb-4'>
+    <header className='flex justify-between items-center px-8 border-b mb-4'>
       <Link href={'/'} className={`${silkScreen.className} text-4xl font-bold text-center p-4`}>
         Billio
       </Link>
@@ -19,9 +19,14 @@ function Header() {
           </SignInButton>
         </SignedOut>
         <SignedIn>
-          <Link href={'/dashboard'}>
+          <Link href={'/receipts'}>
             <Button variant='default'>
-              Add Receipt
+              My Receipts
+            </Button>
+          </Link>
+          <Link href={'/plan'}>
+            <Button variant='default'>
+              Manage Plan
             </Button>
           </Link>
           <UserButton />
