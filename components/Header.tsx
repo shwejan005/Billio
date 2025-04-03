@@ -2,7 +2,7 @@ import { silkScreen } from '@/app/layout'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
-import { SignedIn, SignedOut, SignIn } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 function Header() {
   return (
@@ -12,18 +12,23 @@ function Header() {
       </Link>
       <div className='flex items-center justify-center gap-6'>
         <SignedOut>
-          <SignIn />
+          <SignInButton mode='modal'>
+            <Button variant='default'>
+              Get Started
+            </Button>
+          </SignInButton>
         </SignedOut>
         <SignedIn>
           <Link href={'/dashboard'}>
-            <Button className='bg-slate-700 text-white hover:bg-white hover:text-slate-700 hover:border-slate-700 transition ease-in-out'>
-              Get Started
+            <Button variant='default'>
+              Add Receipt
             </Button>
           </Link>
+          <UserButton />
         </SignedIn>
       </div>
     </header >
   )
 }
 
-export default Header
+export default Header;
