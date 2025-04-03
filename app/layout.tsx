@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { League_Spartan, Silkscreen } from "next/font/google";
+import { League_Spartan} from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -8,11 +8,6 @@ import Header from "@/components/Header";
 const font = League_Spartan({
   subsets: ["latin"],
 });
-
-export const silkScreen = Silkscreen({
-  subsets: ["latin"],
-  weight: "400",
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",

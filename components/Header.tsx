@@ -1,8 +1,13 @@
-import { silkScreen } from '@/app/layout'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { Silkscreen } from 'next/font/google';
+
+const silkScreen = Silkscreen({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 function Header() {
   return (
@@ -19,9 +24,9 @@ function Header() {
           </SignInButton>
         </SignedOut>
         <SignedIn>
-          <Link href={'/receipts'}>
+          <Link href={'/bills'}>
             <Button variant='default'>
-              My Receipts
+              My Bills
             </Button>
           </Link>
           <Link href={'/plan'}>
